@@ -13,6 +13,6 @@ jobs:
 - template: Windows/cicd/templates/build-Windows.yml
   parameters:
     displayName: 'AgoraStringAccountWindows'
-    workingDirectory: 'Windows/Agora-String-Account-Windows'
+    workingDirectory: 'Windows/Agora-Windows'
     scheme: 'Agora-String-Account-Windows'
     sdkurl: $(WindowsRTCSDK)
