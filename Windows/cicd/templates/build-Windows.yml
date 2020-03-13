@@ -52,7 +52,7 @@ jobs:
           archiveFile: ${{ parameters.displayName }}.zip
           replaceExistingArchive: true
           
-      -script: ls && cd ${{ parameters.workingDirectory }} && ls
+      - script: ls && cd ${{ parameters.workingDirectory }} && ls
       
       - task: PublishBuildArtifacts@1
         inputs:
