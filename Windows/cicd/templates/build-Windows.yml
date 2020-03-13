@@ -8,7 +8,7 @@ parameters:
   workingDirectory: ''
   scheme: ''
   sdkurl: ''
-
+		solutionName: ''
 jobs:
   - job: ${{ parameters.displayName }}Build
     displayName: ${{ parameters.displayName }}
@@ -17,7 +17,7 @@ jobs:
       vmImage: 'vs2017-win2016'
 
     variables:
-      solution: '${{ parameters.workingDirectory }}/OpenLive.sln'
+      solution: '${{ parameters.workingDirectory }}/ ${{ parameters.solutionName }}'
       buildPlatform: 'win32'
       buildConfiguration: 'Release'
    

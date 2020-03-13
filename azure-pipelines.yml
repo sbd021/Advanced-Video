@@ -16,6 +16,7 @@ jobs:
     workingDirectory: 'Windows/Agora-String-Account-Windows'
     scheme: 'Agora-String-Account-Windows'
     sdkurl: $(WindowsRTCSDK)
+				solutionName: 'OpenLive.sln'
 
 - template: Windows/cicd/templates/build-Windows.yml
   parameters:
@@ -23,6 +24,7 @@ jobs:
     workingDirectory: 'Windows/LargeGroupVideoChat-Windows'
     scheme: 'LargeGroupVideoChat-Windowss'
     sdkurl: $(WindowsRTCSDK)
+				solutionName: 'AgoraOpenLive.sln'
 
 - template: Windows/cicd/templates/build-Windows.yml
   parameters:
@@ -30,3 +32,4 @@ jobs:
     workingDirectory: 'Windows/Agora-Screen-Sharing-Windows'
     scheme: 'Agora-Screen-Sharing-Windows'
     sdkurl: $(WindowsRTCSDK)
+				solutionName: 'OpenLive.sln'
