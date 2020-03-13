@@ -8,7 +8,7 @@ parameters:
   workingDirectory: ''
   scheme: ''
   sdkurl: ''
-		solutionName: ''
+  solutionName: ''
 jobs:
   - job: ${{ parameters.displayName }}Build
     displayName: ${{ parameters.displayName }}
