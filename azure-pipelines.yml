@@ -10,7 +10,7 @@ variables:
 
 jobs:
 
-- template: Windows/cicd/templates/build-StringAccount-Windows.yml
+- template: Windows/cicd/templates/build-Windows.yml
   parameters:
     displayName: 'AgoraStringAccountWindows'
     workingDirectory: 'Windows/Agora-String-Account-Windows'
