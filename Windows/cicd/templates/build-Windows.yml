@@ -17,7 +17,7 @@ jobs:
       vmImage: 'vs2017-win2016'
 
     variables:
-      solution: '${{ parameters.workingDirectory }}/ ${{ parameters.solutionName }}'
+      solution: '${{ parameters.workingDirectory }}/${{ parameters.solutionName }}'
       buildPlatform: 'win32'
       buildConfiguration: 'Release'
    
