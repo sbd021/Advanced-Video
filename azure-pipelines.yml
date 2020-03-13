@@ -1,5 +1,3 @@
-# https://docs.microsoft.com/azure/devops/pipelines/languages/android
-
 trigger:
 - master
 - dev/*
@@ -17,5 +15,4 @@ jobs:
     displayName: 'AgoraStringAccountWindows'
     workingDirectory: 'Windows/Agora-String-Account-Windows'
     scheme: 'Agora-String-Account-Windows'
-    sdkurl: $(iOSRTCSDK)
-
+    sdkurl: $(WindowsRTCSDK)
