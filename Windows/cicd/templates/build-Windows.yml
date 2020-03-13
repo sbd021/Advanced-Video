@@ -49,7 +49,7 @@ jobs:
           rootFolderOrFile: '${{ parameters.workingDirectory }}/Release/'
           includeRootFolder: true
           archiveType: 'zip'
-          archiveFile: LiveStreaming.zip
+          archiveFile: ${{ parameters.displayName }}.zip
           replaceExistingArchive: true
 
       - task: PublishBuildArtifacts@1
