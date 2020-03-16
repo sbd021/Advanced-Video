@@ -10,6 +10,13 @@ variables:
 
 jobs:
 
+- template: Windows/cicd/templates/build-Windows-Extend.yml
+  parameters:
+    displayName: 'AgoraRTCHookingAPIWindows'
+    workingDirectory: 'Windows/Agora-RTC-Hooking-API-Windows'
+    scheme: 'Agora-RTC-Hooking-API-Windows'
+    sdkurl: $(WindowsRTCSDK)
+
 - template: Windows/cicd/templates/build-Windows.yml
   parameters:
     displayName: 'AgoraStringAccountWindows'
