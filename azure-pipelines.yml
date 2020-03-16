@@ -14,28 +14,4 @@ jobs:
     scheme: 'Agora-RTC-Hooking-API-Windows'
     sdkurl: $(WindowsRTCSDK)
     solutionName: 'AgoraHooking.sln'
-    
-- template: Windows/cicd/templates/build-Windows.yml
-  parameters:
-    displayName: 'AgoraStringAccountWindows'
-    workingDirectory: 'Windows/Agora-String-Account-Windows'
-    scheme: 'Agora-String-Account-Windows'
-    sdkurl: $(WindowsRTCSDK)
-    solutionName: 'OpenLive.sln'
-
-- template: Windows/cicd/templates/build-Windows.yml
-  parameters:
-    displayName: 'LargeGroupVideoChatWindows'
-    workingDirectory: 'Windows/LargeGroupVideoChat-Windows'
-    scheme: 'LargeGroupVideoChat-Windowss'
-    sdkurl: $(WindowsRTCSDK)
-    solutionName: 'AgoraOpenLive.sln'
-
-- template: Windows/cicd/templates/build-Windows.yml
-  parameters:
-    displayName: 'AgoraScreenSharingWindows'
-    workingDirectory: 'Windows/Agora-Screen-Sharing-Windows'
-    scheme: 'Agora-Screen-Sharing-Windows'
-    sdkurl: $(WindowsRTCSDK)
-    solutionName: 'OpenLive.sln'
 
