@@ -34,7 +34,7 @@ jobs:
     sdkurl: $(WindowsRTCSDK)
     solutionName: 'OpenLive.sln'
 
-	- template: Windows/cicd/templates/build-Windows-Extend.yml
+- template: Windows/cicd/templates/build-Windows-Extend.yml
   parameters:
     displayName: 'AgoraRTCHookingAPIWindows'
     workingDirectory: 'Windows/Agora-RTC-Hooking-API-Windows'
