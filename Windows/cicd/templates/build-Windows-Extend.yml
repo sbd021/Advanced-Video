@@ -27,7 +27,7 @@ jobs:
     
       - task: DownloadGitHubRelease@0
         inputs: 
-          connection: sbd021
+          connection: github.com_sbd021
           userRepository: sbd021/Advanced-Video
           defaultVersionType: 'latest'
           itemPattern: '*AgoraHookSDK.zip*'
