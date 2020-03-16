@@ -30,7 +30,8 @@ jobs:
           userRepository: sbd021/Advanced-Video
           defaultVersionType: 'latest'
           version: 'HookSDK'
-          itemPattern: '*AgoraHookSDK.zip*'        - task: ExtractFiles@1
+          itemPattern: '*AgoraHookSDK.zip*'        
+      - task: ExtractFiles@1
         inputs:
           archiveFilePatterns: 'AgoraSDK.zip' 
           destinationFolder: 'AgoraSDK'    
