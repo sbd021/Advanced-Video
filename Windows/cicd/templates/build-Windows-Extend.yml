@@ -24,7 +24,7 @@ jobs:
     steps:
       - script: echo "${{ parameters.sdkurl }}"
       - powershell: cicd/script/downloadsdk.ps1 "${{ parameters.sdkurl }}"
-      - task: DownloadGitHubRelease@1
+      - task: DownloadGitHubRelease@0
         inputs: 
           connection: sbd021
           userRepository: sbd021/Advanced-Video
