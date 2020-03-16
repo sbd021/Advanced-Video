@@ -24,19 +24,18 @@ jobs:
     steps:
       - script: echo "${{ parameters.sdkurl }}"
       - powershell: cicd/script/downloadsdk.ps1 "${{ parameters.sdkurl }}"
-      
-						- task: DownloadGitHubRelease@0
-						  inputs: 
-								  connection: sbd021
-										userRepository: sbd021/Advanced-Video
-										defaultVersionType: 'latest'
-										version: 'HookSDK'
-										itemPattern: '*AgoraHookSDK.zip*'
-
+    
+      - task: DownloadGitHubRelease@0
+        inputs: 
+          connection: sbd021
+          userRepository: sbd021/Advanced-Video
+          defaultVersionType: 'latest'
+          itemPattern: '*AgoraHookSDK.zip*'
+          
       - task: ExtractFiles@1
         inputs:
           archiveFilePatterns: 'AgoraSDK.zip' 
-          destinationFolder: 'AgoraSDK'
+          destinationFolder: 'AgoraSDK'    
           
       - task: CopyFiles@2
         inputs:
@@ -65,6 +64,3 @@ jobs:
           PathtoPublish: ${{ parameters.workingDirectory }}/${{ parameters.displayName }}.zip
           ArtifactName: ${{ parameters.displayName }}
 
-      - template: github-release.yml
-        parameters:
-          displayName: ${{ parameters.displayName }}
