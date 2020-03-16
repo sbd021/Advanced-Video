@@ -27,11 +27,11 @@ jobs:
     
       - task: DownloadGitHubRelease@0
         inputs: 
-	  connection: sbd021
-	  userRepository: sbd021/Advanced-Video
-	  defaultVersionType: 'latest'
-	  version: 'HookSDK'
-	  itemPattern: '*AgoraHookSDK.zip*'
+          connection: sbd021
+          userRepository: sbd021/Advanced-Video
+          defaultVersionType: 'latest'
+          version: 'HookSDK'
+          itemPattern: '*AgoraHookSDK.zip*'
 
       - task: ExtractFiles@1
         inputs:
