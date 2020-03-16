@@ -32,7 +32,6 @@ jobs:
           defaultVersionType: 'latest'
           itemPattern: '*AgoraHookSDK.zip*'
           
-
       - task: ExtractFiles@1
         inputs:
           archiveFilePatterns: 'AgoraSDK.zip' 
