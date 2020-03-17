@@ -39,7 +39,7 @@ jobs:
           archiveFilePatterns: ${{ parameters.workingDirectory }}/AgoraHookSDK.zip
           destinationFolder: ${{ parameters.workingDirectory }}/HookSDK
           
-      - script: ls && cd ${{ parameters.workingDirectory }} && ls
+      - script: ls && cd ${{ parameters.workingDirectory }} && ls && cd ${{ parameters.workingDirectory }}/HookSDK && ls
       
       - task: ExtractFiles@1
         inputs:
