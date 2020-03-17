@@ -6,6 +6,31 @@ variables:
 
 jobs:
 
+- template: Windows/cicd/templates/build-Windows.yml
+  parameters:
+    displayName: 'AgoraStringAccountWindows'
+    workingDirectory: 'Windows/Agora-String-Account-Windows'
+    scheme: 'Agora-String-Account-Windows'
+    sdkurl: $(WindowsRTCSDK)
+    solutionName: 'OpenLive.sln'
+
+- template: Windows/cicd/templates/build-Windows.yml
+  parameters:
+    displayName: 'LargeGroupVideoChatWindows'
+    workingDirectory: 'Windows/LargeGroupVideoChat-Windows'
+    scheme: 'LargeGroupVideoChat-Windowss'
+    sdkurl: $(WindowsRTCSDK)
+    solutionName: 'AgoraOpenLive.sln'
+
+- template: Windows/cicd/templates/build-Windows.yml
+  parameters:
+    displayName: 'AgoraScreenSharingWindows'
+    workingDirectory: 'Windows/Agora-Screen-Sharing-Windows'
+    scheme: 'Agora-Screen-Sharing-Windows'
+    sdkurl: $(WindowsRTCSDK)
+    solutionName: 'OpenLive.sln'
+
+#hook demo
 - template: Windows/cicd/templates/build-Windows-Extend.yml
   parameters:
     displayName: 'AgoraRTCHookingAPIWindows'
@@ -15,3 +40,20 @@ jobs:
     solutionName: 'AgoraHooking.sln'
     downloadGithubSDK: HookSDK.zip
 
+- template: Windows/cicd/templates/build-Windows-Extend.yml
+  parameters:
+    displayName: 'AgoraRTCHookingAPIWindowskuwo'
+    workingDirectory: 'Windows/Agora-RTC-Hooking-API-Windows-kuwo'
+    scheme: 'Agora-RTC-Hooking-API-Windows-kuwo'
+    sdkurl: $(WindowsRTCSDK)
+    solutionName: 'AgoraHooking.sln'
+    downloadGithubSDK: HookSDK.zip
+
+- template: Windows/cicd/templates/build-Windows-Extend.yml
+  parameters:
+    displayName: 'AgoraRTCHookingAPIWindowsyingyonghuyu'
+    workingDirectory: 'Windows/Agora-RTC-Hooking-API-Windows-yingyonghuyu'
+    scheme: 'Agora-RTC-Hooking-API-Windows-yingyonghuyu'
+    sdkurl: $(WindowsRTCSDK)
+    solutionName: 'AgoraHooking.sln'
+    downloadGithubSDK: HookSDK.zip
