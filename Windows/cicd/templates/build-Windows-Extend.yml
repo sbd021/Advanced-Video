@@ -33,7 +33,7 @@ jobs:
           itemPattern: '*AgoraHookSDK.zip*'
           downloadPath: ${{ parameters.workingDirectory }}
           
-      - script: ls
+      - script: ls && cd ${{ parameters.workingDirectory }} && ls
       
       - task: ExtractFiles@1
         inputs:
