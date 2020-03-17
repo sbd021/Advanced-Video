@@ -31,7 +31,8 @@ jobs:
           defaultVersionType: 'latest'
           version: 'hooksdk'
           itemPattern: '*AgoraHookSDK.zip*'
-      
+          downloadPath: ${{ parameters.workingDirectory }}
+          
       - script: ls
       
       - task: ExtractFiles@1
