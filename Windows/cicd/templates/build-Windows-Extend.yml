@@ -9,6 +9,7 @@ parameters:
   scheme: ''
   sdkurl: ''
 		solutionName: ''
+
 jobs:
   - job: ${{ parameters.displayName }}Build
     displayName: ${{ parameters.displayName }}
