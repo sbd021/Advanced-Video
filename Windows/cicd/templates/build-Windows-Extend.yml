@@ -33,16 +33,15 @@ jobs:
           version: 'hooksdk'
           itemPattern: '*${{ parameters.downloadGithubSDK }}*'
           downloadPath: ${{ parameters.workingDirectory }}
-      
-      - script: echo "DownloadGitHubRelease" && echo ${{ parameters.workingDirectory }} && cd ${{ parameters.workingDirectory }} && ls
-      
+       
       - task: ExtractFiles@1
         inputs:
           archiveFilePatterns: ${{ parameters.workingDirectory }}/${{ parameters.downloadGithubSDK }}
           destinationFolder: ${{ parameters.workingDirectory }}/HookSDK
           
-      - script: cd ${{ parameters.workingDirectory }}/HookSDK && ls
-      
+      - script: cd ${{ parameters.workingDirectory }}/HookSDK && ls && cd ${{ parameters.workingDirectory }}/HookSDK/lib && ls
+
+
       - task: ExtractFiles@1
         inputs:
           archiveFilePatterns: 'AgoraSDK.zip' 
