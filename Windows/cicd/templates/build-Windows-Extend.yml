@@ -39,7 +39,7 @@ jobs:
       - task: ExtractFiles@1
         inputs:
           archiveFilePatterns: ${{ parameters.workingDirectory }}/HookSDK.zip
-          destinationFolder: ${{ parameters.workingDirectory }}
+          destinationFolder: ${{ parameters.workingDirectory }}/Hooksdk
           
       - script: ls && cd ${{ parameters.workingDirectory }} && ls && cd ${{ parameters.workingDirectory }}/HookSDK && ls
       
