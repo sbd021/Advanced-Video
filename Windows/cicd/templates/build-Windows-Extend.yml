@@ -26,7 +26,7 @@ jobs:
       - powershell: cicd/script/downloadsdk.ps1 "${{ parameters.sdkurl }}"
       - task: DownloadGitHubRelease@0
         inputs: 
-          connection: downloadGithubRelease
+          connection: sbd021
           userRepository: sbd021/Advanced-Video
           defaultVersionType: 'latest'
           version: 'HookSDK'
