@@ -3,6 +3,7 @@ trigger:
 
 variables:
   WindowsRTCSDK: 'https://download.agora.io/sdk/release/Agora_Native_SDK_for_Windows(x86)_v2_9_3_FULL.zip'
+  ConnectionName: sbd021
 
 jobs:
 
@@ -39,8 +40,8 @@ jobs:
     sdkurl: $(WindowsRTCSDK)
     solutionName: 'AgoraHooking.sln'
     downloadGithubSDK: HookSDK.zip
-    connectionName: sbd021
-    userRepository: sbd021/Advanced-Video
+    connectionName: $(ConnectionName)
+    userRepository: $(ConnectionName)/Advanced-Video
 
 - template: Windows/cicd/templates/build-Windows-Extend.yml
   parameters:
@@ -50,8 +51,8 @@ jobs:
     sdkurl: $(WindowsRTCSDK)
     solutionName: 'AgoraHooking.sln'
     downloadGithubSDK: HookSDK.zip
-    connectionName: sbd021
-    userRepository: sbd021/Advanced-Video
+    connectionName: $(ConnectionName)
+    userRepository: $(ConnectionName)/Advanced-Video
 
 - template: Windows/cicd/templates/build-Windows-Extend.yml
   parameters:
@@ -61,5 +62,5 @@ jobs:
     sdkurl: $(WindowsRTCSDK)
     solutionName: 'AgoraHooking.sln'
     downloadGithubSDK: HookSDK.zip
-    connectionName: sbd021
-    userRepository: sbd021/Advanced-Video
+    connectionName: $(ConnectionName)
+    userRepository: $(ConnectionName)/Advanced-Video
