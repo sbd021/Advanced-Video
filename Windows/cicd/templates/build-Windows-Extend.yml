@@ -39,7 +39,8 @@ jobs:
           archiveFilePatterns: ${{ parameters.workingDirectory }}/${{ parameters.downloadGithubSDK }}
           destinationFolder: ${{ parameters.workingDirectory }}/HookSDK
           
-      - script: cd ${{ parameters.workingDirectory }}/HookSDK && ls && cd ${{ parameters.workingDirectory }}/HookSDK/lib && ls
+      - script: cd ${{ parameters.workingDirectory }}/HookSDK && ls 
+      - script: cd ${{ parameters.workingDirectory }}/HookSDK/lib && ls
 
 
       - task: ExtractFiles@1
