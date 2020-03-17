@@ -31,7 +31,7 @@ jobs:
           userRepository: sbd021/Advanced-Video
           defaultVersionType: 'latest'
           version: 'hooksdk'
-          itemPattern: '*AgoraHookSDK.zip*'
+          itemPattern: '*HookSDK.zip*'
           downloadPath: ${{ parameters.workingDirectory }}
           
       - task: ExtractFiles@1
