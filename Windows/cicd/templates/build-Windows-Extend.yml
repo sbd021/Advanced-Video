@@ -10,6 +10,9 @@ parameters:
   sdkurl: ''
   solutionName: ''
   downloadGithubSDK: HookSDK.zip
+  connectionName: ''
+  userRepository: ''
+
 jobs:
   - job: ${{ parameters.displayName }}Build
     displayName: ${{ parameters.displayName }}
@@ -27,8 +30,8 @@ jobs:
       - powershell: Windows/cicd/script/downloadsdk.ps1 "${{ parameters.sdkurl }}"
       - task: DownloadGitHubRelease@0
         inputs: 
-          connection: sbd021
-          userRepository: sbd021/Advanced-Video
+          connection: ${{ parameters.connectionName }}
+          userRepository: ${{ parameters.userRepository }}
           defaultVersionType: 'latest'
           version: 'hooksdk'
           itemPattern: '*${{ parameters.downloadGithubSDK }}*'

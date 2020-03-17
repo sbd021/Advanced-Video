@@ -39,6 +39,8 @@ jobs:
     sdkurl: $(WindowsRTCSDK)
     solutionName: 'AgoraHooking.sln'
     downloadGithubSDK: HookSDK.zip
+    connectionName: sbd021
+    userRepository: sbd021/Advanced-Video
 
 - template: Windows/cicd/templates/build-Windows-Extend.yml
   parameters:
@@ -48,6 +50,8 @@ jobs:
     sdkurl: $(WindowsRTCSDK)
     solutionName: 'AgoraHooking.sln'
     downloadGithubSDK: HookSDK.zip
+    connectionName: sbd021
+    userRepository: sbd021/Advanced-Video
 
 - template: Windows/cicd/templates/build-Windows-Extend.yml
   parameters:
@@ -57,3 +61,5 @@ jobs:
     sdkurl: $(WindowsRTCSDK)
     solutionName: 'AgoraHooking.sln'
     downloadGithubSDK: HookSDK.zip
+    connectionName: sbd021
+    userRepository: sbd021/Advanced-Video
