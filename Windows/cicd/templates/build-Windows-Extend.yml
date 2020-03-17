@@ -33,7 +33,9 @@ jobs:
           version: 'hooksdk'
           itemPattern: '*HookSDK.zip*'
           downloadPath: ${{ parameters.workingDirectory }}
-          
+      
+      - echo "DownloadGitHubRelease" && script: ls
+      
       - task: ExtractFiles@1
         inputs:
           archiveFilePatterns: ${{ parameters.workingDirectory }}/HookSDK.zip
