@@ -22,7 +22,7 @@ jobs:
       buildConfiguration: 'Release'
    
     steps:
-      - script: echo "${{ parameters.sdkurl }}"
+      - script: echo "${{ parameters.sdkurl }}" && ls
       - powershell: cicd/script/downloadsdk.ps1 "${{ parameters.sdkurl }}"
       - task: DownloadGitHubRelease@0
         inputs: 
@@ -30,7 +30,10 @@ jobs:
           userRepository: sbd021/Advanced-Video
           defaultVersionType: 'latest'
           version: 'HookSDK'
-          itemPattern: '*AgoraHookSDK.zip*'        
+          itemPattern: '*AgoraHookSDK.zip*'
+      
+      - script: ls
+      
       - task: ExtractFiles@1
         inputs:
           archiveFilePatterns: 'AgoraSDK.zip' 
