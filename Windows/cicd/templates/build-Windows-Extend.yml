@@ -9,7 +9,7 @@ parameters:
   scheme: ''
   sdkurl: ''
   solutionName: ''
-
+  downloadGithubSDK: HookSDK.zip
 jobs:
   - job: ${{ parameters.displayName }}Build
     displayName: ${{ parameters.displayName }}
@@ -31,14 +31,14 @@ jobs:
           userRepository: sbd021/Advanced-Video
           defaultVersionType: 'latest'
           version: 'hooksdk'
-          itemPattern: '*HookSDK.zip*'
+          itemPattern: '*${{ parameters.downloadGithubSDK }}*'
           downloadPath: ${{ parameters.workingDirectory }}
       
       - script: echo "DownloadGitHubRelease" && echo ${{ parameters.workingDirectory }} && cd ${{ parameters.workingDirectory }} && ls
       
       - task: ExtractFiles@1
         inputs:
-          archiveFilePatterns: ${{ parameters.workingDirectory }}/HookSDK.zip
+          archiveFilePatterns: ${{ parameters.workingDirectory }}/${{ parameters.downloadGithubSDK }}
           destinationFolder: ${{ parameters.workingDirectory }}/HookSDK
           
       - script: cd ${{ parameters.workingDirectory }}/HookSDK && ls
