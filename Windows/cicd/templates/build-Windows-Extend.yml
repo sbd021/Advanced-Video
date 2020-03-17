@@ -31,15 +31,17 @@ jobs:
           userRepository: sbd021/Advanced-Video
           defaultVersionType: 'latest'
           version: 'hooksdk'
-          itemPattern: '*AgoraHookSDK.zip*'
+          itemPattern: '*HookSDK.zip*'
           downloadPath: ${{ parameters.workingDirectory }}
-          
+      
+      - script: echo "DownloadGitHubRelease" && echo ${{ parameters.workingDirectory }} && cd ${{ parameters.workingDirectory }} && ls
+      
       - task: ExtractFiles@1
         inputs:
-          archiveFilePatterns: ${{ parameters.workingDirectory }}/AgoraHookSDK.zip
+          archiveFilePatterns: ${{ parameters.workingDirectory }}/HookSDK.zip
           destinationFolder: ${{ parameters.workingDirectory }}/HookSDK
           
-      - script: ls && cd ${{ parameters.workingDirectory }} && ls
+      - script: cd ${{ parameters.workingDirectory }}/HookSDK && ls
       
       - task: ExtractFiles@1
         inputs:
