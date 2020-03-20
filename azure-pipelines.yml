@@ -2,9 +2,10 @@ trigger:
 - master
 
 variables:
-  WindowsRTCSDK: 'https://download.agora.io/sdk/release/Agora_Native_SDK_for_Windows(x86)_v2_9_3_FULL.zip'
+  #WindowsRTCSDK: 'https://download.agora.io/sdk/release/Agora_Native_SDK_for_Windows(x86)_v2_9_3_FULL.zip'
+		WindowsRTCSDK: 'https://download.agora.io/sdk/release/Agora_Native_SDK_for_Windows(x86)_v3_0_0_FULL.zip'
   ConnectionName: sbd021
-
+  RepoName: sbd021
 jobs:
 
 - template: Windows/cicd/templates/build-Windows.yml
@@ -14,6 +15,7 @@ jobs:
     scheme: 'Agora-String-Account-Windows'
     sdkurl: $(WindowsRTCSDK)
     solutionName: 'OpenLive.sln'
+    sdkunzipPath: 'AgoraSDK/Agora_Native_SDK_for_Windows_v3.0.0_FULL'
 
 - template: Windows/cicd/templates/build-Windows.yml
   parameters:
@@ -22,6 +24,7 @@ jobs:
     scheme: 'LargeGroupVideoChat-Windowss'
     sdkurl: $(WindowsRTCSDK)
     solutionName: 'AgoraOpenLive.sln'
+    sdkunzipPath: 'AgoraSDK/Agora_Native_SDK_for_Windows_v3.0.0_FULL'
 
 - template: Windows/cicd/templates/build-Windows.yml
   parameters:
@@ -30,6 +33,7 @@ jobs:
     scheme: 'Agora-Screen-Sharing-Windows'
     sdkurl: $(WindowsRTCSDK)
     solutionName: 'OpenLive.sln'
+    sdkunzipPath: 'AgoraSDK/Agora_Native_SDK_for_Windows_v3.0.0_FULL'
 
 #hook demo
 - template: Windows/cicd/templates/build-Windows-Extend.yml
@@ -41,7 +45,8 @@ jobs:
     solutionName: 'AgoraHooking.sln'
     downloadGithubSDK: HookSDK.zip
     connectionName: $(ConnectionName)
-    userRepository: $(ConnectionName)/Advanced-Video
+    userRepository: $(RepoName)/Advanced-Video
+    sdkunzipPath: 'AgoraSDK/Agora_Native_SDK_for_Windows_v3.0.0_FULL'
 
 - template: Windows/cicd/templates/build-Windows-Extend.yml
   parameters:
@@ -52,7 +57,8 @@ jobs:
     solutionName: 'AgoraHooking.sln'
     downloadGithubSDK: HookSDK.zip
     connectionName: $(ConnectionName)
-    userRepository: $(ConnectionName)/Advanced-Video
+    userRepository: $(RepoName)/Advanced-Video
+    sdkunzipPath: 'AgoraSDK/Agora_Native_SDK_for_Windows_v3.0.0_FULL'
 
 - template: Windows/cicd/templates/build-Windows-Extend.yml
   parameters:
@@ -63,4 +69,5 @@ jobs:
     solutionName: 'AgoraHooking.sln'
     downloadGithubSDK: HookSDK.zip
     connectionName: $(ConnectionName)
-    userRepository: $(ConnectionName)/Advanced-Video
+    userRepository: $(RepoName)/Advanced-Video
+    sdkunzipPath: 'AgoraSDK/Agora_Native_SDK_for_Windows_v3.0.0_FULL'
