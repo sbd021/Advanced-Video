@@ -7,7 +7,15 @@ variables:
   ConnectionName: sbd021
   RepoName: sbd021
 jobs:
-
+- template: Windows/cicd/templates/build-Windows-vs2013.yml
+  parameters:
+    displayName: 'AgoraMediaSourceWindows'
+    workingDirectory: 'Windows/Agora-Media-Source-Windows'
+    scheme: 'Agora-Media-Source-Windows'
+    sdkurl: $(WindowsRTCSDK)
+    solutionName: 'AgoraMediaSource.sln'
+    sdkunzipPath: 'AgoraSDK/Agora_Native_SDK_for_Windows_v3.0.0_FULL'
+#Windows Demo
 - template: Windows/cicd/templates/build-Windows.yml
   parameters:
     displayName: 'AgoraStringAccountWindows'
